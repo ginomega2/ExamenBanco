@@ -14,4 +14,5 @@ public interface ClienteService {
     Mensaje depositar(long id, double cantidad);
 
     Mensaje retirar(long id,double cantidad);
+    Mensaje transferencia(long idCliente1,long idCliente2,double cantidad);
 }

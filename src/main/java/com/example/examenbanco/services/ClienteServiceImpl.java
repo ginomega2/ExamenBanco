@@ -56,4 +56,14 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
 
+    @Override
+    public Mensaje transferencia(long idCliente1, long idCliente2, double cantidad) {
+        String msg1=repository.findById(idCliente1).get().getNombre();
+        String msg2=repository.findById(idCliente2).get().getNombre();
+        retirar(idCliente1,cantidad);
+        depositar(idCliente2,cantidad);
+        return new Mensaje(idCliente1,"El usuario "+msg1+" ha transferido "+cantidad+" a "+msg2);
+    }
+
+
 }

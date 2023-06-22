@@ -1,6 +1,8 @@
 package com.example.examenbanco.domains;
 
+
 public class Mensaje {
+
     long id;
     String mensaje;
 

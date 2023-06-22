@@ -67,11 +67,14 @@ public class ClienteRestController {
             Mensaje mensaje = service.retirar(id, cantidad);
             return new ResponseEntity(mensaje, HttpStatus.ACCEPTED);
         }
-
-
     }
-
-
-
-
+    @PostMapping("/{idCliente1}/transferencia/{idCliente2}/{cantidad}")//********* http://localhost:8063/api/cliente/{idCliente1}/transferencia/{idCliente2}/{cantidad}
+    public ResponseEntity transferirCliente(@PathVariable long idCliente1,@PathVariable long idCliente2,@PathVariable double cantidad){
+        if (cantidad>service.findClienteById(idCliente1).getSaldo()) {
+            return new ResponseEntity(HttpStatus.CONFLICT);
+        }else {
+            Mensaje mensaje=service.transferencia(idCliente1,idCliente2,cantidad);
+            return new ResponseEntity(mensaje,HttpStatus.ACCEPTED);
+        }
+    }
 }
