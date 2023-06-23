@@ -32,9 +32,6 @@ public class Mensaje {
 
     @Override
     public String toString() {
-        return "Mensaje{" +
-                "id=" + id +
-                ", mensaje='" + mensaje + '\'' +
-                '}';
+        return this.mensaje;
     }
 }
