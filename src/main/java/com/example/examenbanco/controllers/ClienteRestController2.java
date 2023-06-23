@@ -56,7 +56,7 @@ public class ClienteRestController2 {
     @PostMapping("/{id}/depositar/{cantidad}")      //********* http://localhost:8063/api2/cliente/{id}/depositar/{cantidad}
     public ResponseEntity depositaraCliente(@PathVariable long id,@PathVariable double cantidad){
         Mensaje mensaje= service.depositar(id,cantidad);
-        return new ResponseEntity(mensaje,HttpStatus.OK);
+        return new ResponseEntity (mensaje,HttpStatus.OK);
     }
     @PostMapping("/{id}/retirar/{cantidad}")            //********* http://localhost:8063/api2/cliente/{id}/retirar/{cantidad}
     public ResponseEntity retirarCliente(@PathVariable long id,@PathVariable double cantidad){
